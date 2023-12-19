@@ -19,6 +19,9 @@ class DiskMonitorApp(customtkinter.CTk):
             label.grid(row=i, column=0, padx=10, pady=5, sticky='w')
             self.disk_labels.append(label)
             self.disk_textvars.append(text_var)
+
+        # Checking the consistency
+        assert len(self.disk_labels) == len(self.disk_textvars)
         
         self.update_disk_info()
 
