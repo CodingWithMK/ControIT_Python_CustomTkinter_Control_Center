@@ -19,7 +19,7 @@ class GPUMonitorApp(customtkinter.CTk):
 
     def update_gpu_info(self):
         try:
-            gpu_info = GPUtil.getGPUs()[0]
+            gpu_info = GPUtil.getGPUs()[0]  # If first index does return the exception try with next index.
             gpu_percent = gpu_info.load * 100
             self.gpu_usage.configure(text=f'{gpu_percent:.2f}%')
         except Exception as e:
